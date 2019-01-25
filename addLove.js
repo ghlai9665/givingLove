@@ -1,5 +1,5 @@
 document.onclick = function(){
-    if (idNumber>140)
+    if (idNumber>20)
     {
             return alert("Too much love!!");
     }
@@ -20,7 +20,7 @@ function addLove () {
   newDiv.appendChild(newContent);  
 
   // add the newly created element and its content into the DOM 
-  document.body.appendChild(newDiv);
+  document.getElementById("section2").appendChild(newDiv);
   return setPosition();
 }
 

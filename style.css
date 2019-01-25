@@ -1,3 +1,28 @@
 .love{
     font-size: 30px;
+    /*color: #FCF2F2;*/
+    color: black;
+}
+
+/*
+.input-field>label{
+    font-size: 2rem;
+}*/
+#input{
+    font-size: 3rem;
+}
+
+body{
+    /*background-color: #1d1d1d;*/
+    background-color: white;
+}
+
+section{
+    height: 100vh;
+    padding-top:50px;
+    position: relative;
+}
+
+#center-align{
+    margin: auto;
 }
