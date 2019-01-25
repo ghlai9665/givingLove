@@ -7,6 +7,8 @@ function addLove () {
   var newDiv = document.createElement("div"); 
   newDiv.className = "love";
   newDiv.setAttribute("id", idNumber.toString());
+  newDiv.setAttribute("display", "block;");
+  newDiv.setAttribute("margin", "10px;");
   console.log("love id is set to:" + idNumber);
   // and give it some content 
   var newContent = document.createTextNode("LOVE"); 
