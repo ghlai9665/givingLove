@@ -1,5 +1,9 @@
 document.onclick = function(){
-    addLove();
+    if (idNumber>140)
+    {
+            return alert("Too much love!!");
+    }
+    return addLove();
 }
 
 function addLove () { 
@@ -8,8 +12,8 @@ function addLove () {
   newDiv.className = "love";
   newDiv.setAttribute("id", idNumber.toString());
   newDiv.setAttribute("display", "block;");
-  newDiv.setAttribute("margin", "10px;");
-  console.log("love id is set to:" + idNumber);
+  //newDiv.setAttribute("margin");
+ // console.log("love id is set to:" + idNumber);
   // and give it some content 
   var newContent = document.createTextNode("LOVE"); 
   // add the text node to the newly created div
@@ -17,6 +21,6 @@ function addLove () {
 
   // add the newly created element and its content into the DOM 
   document.body.appendChild(newDiv);
-  setPosition();
+  return setPosition();
 }
 
