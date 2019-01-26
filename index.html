@@ -12,25 +12,28 @@
 </head>
 <body>
     <section>
+        <form>
         <div class="row" style="position:absolute;left:30%;right:30%;top:30%;bottom:30%;">
             <div class="input-field">
-                <input id="input1" type="text" class="validate" style="margin-top: 5rem; padding-left:0.3rem; font-size:2rem;">
+                <input id="input1" type="text" class="validate" autocomplete="off" style="margin-top: 5rem; padding-left:0.3rem; font-size:2rem;">
                     <label class="active" for="input1" id="input">What do you want to give?</label>
+                <!--<input type="button" value="submit" onClick="takeUserInput()">   --> 
             </div>    
         </div>
+        </form>
         
     </section>
     <section id="section2">
-    <div class="love" id="1" style="position: absolute; top:50%; left:50%; margin:10px;">
-        LOVE
-    </div>
+    
     </section>
 
     <script type="text/javascript">
         //global variables
+        var text = "";
         var idNumber = 2;
     </script>
     <script type="text/javascript" src="./setPosition.js"></script>
     <script type="text/javascript" src="./addLove.js"></script>
+    <script type="text/javascript" src="./takeUserInput.js"></script>
 </body>
 </html>
