@@ -4,10 +4,6 @@
     color: black;
 }
 
-/*
-.input-field>label{
-    font-size: 2rem;
-}*/
 #input{
     font-size: 3rem;
 }
@@ -26,3 +22,5 @@ section{
 #center-align{
     margin: auto;
 }
+
+
