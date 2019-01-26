@@ -1,0 +1,1 @@
+A web app that lets you give whatever you want: love, hate, sex, fucks etc... But try to keep it positive and PG13 please :)
