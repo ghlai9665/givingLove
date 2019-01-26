@@ -16,6 +16,7 @@ function initLove(){
   var initContent = document.createTextNode(text); 
   initDiv.appendChild(initContent);  
   document.getElementById("section2").appendChild(initDiv);
+  window.location.href = '#section2';
   return;
 }
 
