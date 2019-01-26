@@ -7,8 +7,10 @@ document.getElementById("section2").onclick = function(){
 }
 
 function initLove(){
+  //clear the field
+  idNumber = 2;
+  document.getElementById("section2").innerHTML = "";
   //initialize
-  // create a new div element 
   var initDiv = document.createElement("div"); 
   initDiv.className = "love";
   initDiv.setAttribute("id", "1");
