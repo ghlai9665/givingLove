@@ -23,12 +23,19 @@
 #fieldInput::placeholder {
   color: #bdbdbd;
 }
+
+.input-field input[type="text"]:focus {
+  border-bottom: 1px solid #212121;
+  box-shadow: 0 1px 0 0 #212121;
+}
 /*
 html,
 body {
   overflow: hidden;
 }*/
-
+header {
+  animation: blinker 3s linear infinite;
+}
 body {
   /*background-color: #1d1d1d;*/
   /*background-color: #e3f2fd;*/

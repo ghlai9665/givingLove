@@ -1,19 +1,7 @@
-/*function openModal() {
-  return new Promise((resolve, reject) => {
-    $("#modal-login")
-      .modal("open")
-      .done(response => {
-        //this means my api call suceeded, so I will call resolve on the response
-        resolve(response);
-      })
-      .fail(error => {
-        //this means the api call failed, so I will call reject on the error
-        reject(error);
-      });
-  });
-}*/
 function openModal() {
-  $("#modal-login").modal("open");
+  //console.log("it tried to open modal");
+  $("#modal-asklogin").modal("open");
+  //  console.log("it went thru");
   // if log in, allow more fucks
 
   // else, restart()
@@ -80,7 +68,7 @@ function initLove() {
   initDiv.className = "instruction";
   initDiv.setAttribute(
     "style",
-    "text-align: center; margin-top: 80vh; font-size:5vh;"
+    "text-align: center; margin-top: 80vh; font-size:3vh;"
   );
   initDiv.setAttribute("id", "instruction1");
   var initContent = document.createTextNode(
@@ -93,6 +81,37 @@ function initLove() {
 
   window.scroll({
     top: 2 * window.innerHeight,
+    left: 0,
+    behavior: "smooth"
+  });
+
+  return;
+}
+
+function restartLove() {
+  //clear the field
+  idNumber = 1;
+  document.getElementById("section3").innerHTML = "";
+
+  //"position: absolute; left: 35vw; top: 90vh"
+  //initialize
+  var initDiv = document.createElement("div");
+  initDiv.className = "instruction";
+  initDiv.setAttribute(
+    "style",
+    "text-align: center; margin-top: 80vh; font-size:5vh;"
+  );
+  initDiv.setAttribute("id", "instruction1");
+  var initContent = document.createTextNode(
+    "Click the screen for more " + text + "s!"
+  );
+  initDiv.appendChild(initContent);
+  document.getElementById("section3").appendChild(initDiv);
+
+  //window.location.href = '#section2'; //here needs to add animation
+
+  window.scrollTo({
+    top: 1 * window.innerHeight,
     left: 0,
     behavior: "smooth"
   });
