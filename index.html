@@ -1,38 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-     <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Giving Fucks</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+  <body>
+    <section id="section1">
+      <header class="center-align" style="margin-top: 10%; margin-bottom: 0%;">
+        <h4>Welcome to How Many Fucks Given</h4>
+      </header>
+      <div class="center-align" style="margin-top: 10%;">
+        <button
+          class="btn-large black darken-2 z-depth-0"
+          style="margin-right: 1%"
+        >
+          Login
+        </button>
+        <button
+          class="btn-large black darken-2 z-depth-0"
+          style="margin-right: 1%"
+        >
+          Signup
+        </button>
+        <button class="btn-large black darken-2 z-depth-0" id="guest">
+          Continue as Guest
+        </button>
+      </div>
+    </section>
 
-</head>
-<body>
     <section>
-        <form>
-        <div class="row" style="position:absolute;left:30%;right:30%;top:30%;bottom:30%;">
-            <div class="input-field">
-                <input id="input1" type="text" class="validate" autocomplete="off" placeholder="e.g. love, positivity, star, fuck etc." style="margin-top: 5rem; padding-left:0.3rem; font-size:2rem;">
-                    <label class="active" for="input1" id="input">What do you want to give?</label>
-                <!--<input type="button" value="submit" onClick="takeUserInput()">   --> 
-            </div>    
+      <form>
+        <div
+          class="row"
+          style="position: absolute; left:30%;right:0%;top:30%;bottom:30%;"
+        >
+          <div class="input-field">
+            <input
+              id="fieldInput"
+              type="text"
+              class="validate"
+              autocomplete="off"
+              placeholder="e.g. love, positivity, star, fuck etc."
+              style="position: relative; margin-top: 3vw; padding-bottom: 0.2rem; padding-left:0.3rem; padding-top: 1vh; font-size:2.3vw; width: 35vw;"
+            />
+            <label class="active" for="fieldInput" id="labelInput"
+              >What would you like to give?</label
+            >
+          </div>
         </div>
-        </form>
+      </form>
     </section>
-    <section id="section2">
-    
-    </section>
+
+    <section id="section3"></section>
+
+    <script type="text/javascript" src="./homeScreen.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyARN_48vH28jpHXFfBvxiNfnYE6I1RkGTE",
+        authDomain: "giving-fucks.firebaseapp.com",
+        databaseURL: "https://giving-fucks.firebaseio.com",
+        projectId: "giving-fucks",
+        storageBucket: "",
+        messagingSenderId: "145183730410"
+      };
+      firebase.initializeApp(config);
+      const auth = firebase.auth();
+    </script>
     <script type="text/javascript">
-        //global variables
-        var text = "";
-        var idNumber = 2;
+      //global variables
+      var text = "";
+      var idNumber = 2;
     </script>
     <script type="text/javascript" src="./setPosition.js"></script>
     <script type="text/javascript" src="./addLove.js"></script>
     <script type="text/javascript" src="./takeUserInput.js"></script>
-
-</body>
+    <script type="text/javascript" src="./restart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".scrollspy").scrollSpy();
+      });
+    </script>
+  </body>
 </html>
