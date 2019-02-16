@@ -1,9 +1,42 @@
+/*function openModal() {
+  return new Promise((resolve, reject) => {
+    $("#modal-login")
+      .modal("open")
+      .done(response => {
+        //this means my api call suceeded, so I will call resolve on the response
+        resolve(response);
+      })
+      .fail(error => {
+        //this means the api call failed, so I will call reject on the error
+        reject(error);
+      });
+  });
+}*/
+function openModal() {
+  $("#modal-login").modal("open");
+  // if log in, allow more fucks
+
+  // else, restart()
+}
+function limit(callback) {
+  var finalMsg = new SpeechSynthesisUtterance();
+  finalMsg.text =
+    "Wow, 20" + " " + text + "s were given, that's a lot of " + text + "s!!!";
+  speechSynthesis.speak(finalMsg);
+  callback();
+}
+
+var instructChange1 = 5;
+var instructChange2 = 7;
+var instructChange3 = 9;
+var total = 11;
+
 //handle clicks
 document.getElementById("section3").onclick = function() {
-  var instructChange1 = 5;
+  /*var instructChange1 = 5;
   var instructChange2 = 7;
   var instructChange3 = 9;
-  var total = 11;
+  var total = 11;*/
 
   if (idNumber > instructChange1) {
     document.getElementById("instruction1").innerHTML =
@@ -18,14 +51,20 @@ document.getElementById("section3").onclick = function() {
       "DON'T STOP!!!!! MORE " + text.toUpperCase() + "S!!!";
   }
   if (idNumber > total) {
-    var finalMsg = new SpeechSynthesisUtterance();
+    /*var finalMsg = new SpeechSynthesisUtterance();
     finalMsg.text =
       "Wow, 20" + " " + text + "s were given, that's a lot of " + text + "s!!!";
-    speechSynthesis.speak(finalMsg);
-    alert(
-      "20" + " " + text + "s were given !!! That's a lot of " + text + "!!!"
-    );
-    return restart();
+    speechSynthesis.speak(finalMsg);*/
+
+    //alert(
+    //"20" + " " + text + "s were given !!! That's a lot of " + text + "!!!"
+    // );
+    /*
+    return $("#modal-login")
+      .modal("open")
+      .then(() => restart());*/
+    //return openModal().then(console.log("Promise was fulfilled"));
+    return limit(openModal);
   }
   return addLove();
 };
