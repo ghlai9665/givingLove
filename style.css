@@ -13,21 +13,31 @@
   color: #212121;
 }
 
-#fieldInput:focus {
+#fieldInput-premium:focus {
   color: #212121;
   border-bottom: 1px solid #424242;
   box-shadow: 0 1px 0 0 #000;
   /*color: #1d1d1d;*/
 }
 
-#fieldInput::placeholder {
+#fieldInput-premium::placeholder {
   color: #bdbdbd;
 }
 
+.input-field input[type="text"]:focus + label {
+  color: #212121;
+}
+/* label underline focus color */
 .input-field input[type="text"]:focus {
   border-bottom: 1px solid #212121;
   box-shadow: 0 1px 0 0 #212121;
 }
+
+/*
+.input-field input[type="text"]:focus {
+  border-bottom: 1px solid #212121;
+  box-shadow: 0 1px 0 0 #212121;
+}*/
 /*
 html,
 body {

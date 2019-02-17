@@ -18,36 +18,44 @@
         <h4>Welcome to How Many Fucks Given.</h4>
       </header>
       <div class="center-align" style="margin-top: 10%;">
-        <button
-          class="btn-large black darken-2 z-depth-0 modal-trigger"
-          style="display:none; margin-right: 1%;"
-          data-target="modal-login"
-          id="login"
-        >
-          Login
-        </button>
-        <button
-          class="btn-large black darken-2 z-depth-0 "
-          id="logout"
-          style="display:none; margin-right: 1%; "
-        >
-          Logout
-        </button>
-        <button
-          class="btn-large black darken-2 z-depth-0 modal-trigger"
-          style="display:none; margin-right: 1%"
-          data-target="modal-signup"
-          id="signup"
-        >
-          Signup
-        </button>
-        <button
-          class="btn-large black darken-2 z-depth-0 "
-          id="guest"
-          style="display:none; margin-right: 1%"
-        >
-          Continue as Guest
-        </button>
+        <span class="col s12 l4">
+          <button
+            class="btn-large black darken-2 z-depth-0 modal-trigger"
+            style="display:none; margin-right: 1%; margin-top: 2vh;"
+            data-target="modal-login"
+            id="login"
+          >
+            Login
+          </button>
+        </span>
+        <span class="col s12 l4">
+          <button
+            class="btn-large black darken-2 z-depth-0 col s12 l4"
+            id="logout"
+            style="display:none; margin-right: 1%; margin-top: 2vh;"
+          >
+            Logout
+          </button>
+        </span>
+        <span>
+          <button
+            class="btn-large black darken-2 z-depth-0 modal-trigger col s12 l4"
+            style="display:none; margin-right: 1%; margin-top: 2vh;"
+            data-target="modal-signup"
+            id="signup"
+          >
+            Signup
+          </button>
+        </span>
+        <span>
+          <button
+            class="btn-large black darken-2 z-depth-0 "
+            id="guest"
+            style="display:none; margin-right: 1%; margin-top: 2vh;"
+          >
+            Continue as Guest
+          </button>
+        </span>
       </div>
 
       <!-- SIGN UP MODAL -->
@@ -122,15 +130,30 @@
           <button class="btn black darken-2 z-depth-0" id="yeah">Login</button>
         </div>-->
         <div class="modal-content">
-          <h5>Log in for many more fucks and other cool features?</h5>
-          <h5>"Nah" to replay the free version</h5>
+          <h5>"Log in" for many more fucks and other cool features</h5>
+          <h5>"Nah" to replay the lame free version</h5>
           <br />
           <div class="center-align">
-            <button class="btn-large black darken-2 z-depth-0" id="yeah">
+            <button
+              class="btn-large black darken-2 z-depth-0"
+              style="margin-top: 2vh;"
+              id="yeah"
+            >
               Login
             </button>
-            <button class="btn-large black darken-2 z-depth-0" id="nah">
+            <button
+              class="btn-large black darken-2 z-depth-0"
+              style="margin-top: 2vh;"
+              id="nah"
+            >
               Nah
+            </button>
+            <button
+              class="btn-large black darken-2 z-depth-0"
+              style="margin-top: 2vh;"
+              id="nah"
+            >
+              I just wanna give more fucks
             </button>
           </div>
         </div>
@@ -145,14 +168,33 @@
         >
           <div class="input-field">
             <input
-              id="fieldInput"
+              id="fieldInput-premium"
               type="text"
-              class="validate"
               autocomplete="off"
-              placeholder="e.g. fuck, love, positivity, energy, fuck..."
-              style="position: relative; margin-top: 3vw; padding-bottom: 0.2rem; padding-left:0.3rem; padding-top: 1vh; font-size:2vw; width: 35vw;"
+              placeholder="e.g. fuck, love, s, energy, fuck..."
+              style="display: none; position: relative; margin-top: 3vw; padding-bottom: 0.2rem; padding-left:0.3rem; padding-top: 4vh; font-size:2vw; width: 35vw;"
             />
-            <label class="active" for="fieldInput" id="labelInput"
+            <div class="center-align">
+              <button
+                class="btn-large black darken-2 z-depth-0"
+                id="fuckButton"
+                style="display: none;"
+              >
+                fuck
+              </button>
+              <button
+                class="btn-large black darken-2 z-depth-0"
+                id="loveButton"
+                style="display: none;"
+              >
+                love
+              </button>
+            </div>
+            <label
+              class="active"
+              for="fieldInput-premium"
+              id="labelInput"
+              style="margin-bottom: 3vw;"
               >What would you like to give?</label
             >
           </div>

@@ -1,4 +1,4 @@
-//continue as a gues
+//continue as a guest
 document.getElementById("guest").addEventListener("click", e => {
   e.preventDefault();
   window.scroll({
@@ -116,11 +116,17 @@ const setupUI = user => {
     document.querySelector("#login").style.display = "none";
     document.querySelector("#guest").style.display = "none";
     document.querySelector("#signup").style.display = "none";
+    document.querySelector("#loveButton").style.display = "none";
+    document.querySelector("#fuckButton").style.display = "none";
+    document.querySelector("#fieldInput-premium").style.display = "block";
   } else {
     total = 11;
     document.querySelector("#login").style.display = "inline";
     document.querySelector("#logout").style.display = "none";
     document.querySelector("#guest").style.display = "inline";
     document.querySelector("#signup").style.display = "inline";
+    document.querySelector("#fieldInput-premium").style.display = "none";
+    document.querySelector("#loveButton").style.display = "inline";
+    document.querySelector("#fuckButton").style.display = "inline";
   }
 };
