@@ -14,10 +14,11 @@ function limit(callback) {
   callback();
 }
 
-var instructChange1 = 5;
-var instructChange2 = 7;
-var instructChange3 = 9;
-var total = 11;
+var total = 15;
+var instructChange1 = 15 * 0.2;
+var instructChange2 = 15 * 0.4;
+var instructChange3 = 15 * 0.6;
+var instructChange4 = 15 * 0.8;
 
 //handle clicks
 document.getElementById("section3").onclick = function() {
@@ -38,6 +39,15 @@ document.getElementById("section3").onclick = function() {
     document.getElementById("instruction1").innerHTML =
       "DON'T STOP!!!!! MORE " + text.toUpperCase() + "S!!!";
   }
+  if (idNumber > instructChange4) {
+    document.getElementById("instruction1").innerHTML =
+      "You are almost out of " + text.toUpperCase() + "s!";
+  }
+  if (idNumber == total) {
+    document.getElementById("instruction1").innerHTML =
+      "Sorry. You are out of " + text.toUpperCase() + "s.";
+  }
+
   if (idNumber > total) {
     /*var finalMsg = new SpeechSynthesisUtterance();
     finalMsg.text =

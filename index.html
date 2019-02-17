@@ -148,7 +148,8 @@
             >
               Nah
             </button>
-
+            <span id="paypal-button-container"> </span>
+            <!--
             <form action="/pay" method="post" style="display: inline;">
               <button
                 class="btn-large black darken-2 z-depth-0"
@@ -159,7 +160,7 @@
               >
                 I just wanna give more fucks
               </button>
-            </form>
+            </form>-->
           </div>
         </div>
       </div>
@@ -242,6 +243,36 @@
       $(document).ready(function() {
         $(".scrollspy").scrollSpy();
       });
+    </script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AaUC36PZru6KSWA3FJ9ITTwedFUgKh6KRD-pugBy2EkT3eNfFHG-IO7Yln6HRZBtCwmXEI5VwAPGu0Y2"></script>
+
+    <script>
+      paypal
+        .Buttons({
+          createOrder: function(data, actions) {
+            return actions.order.create({
+              purchase_units: [
+                {
+                  amount: {
+                    value: "1.00",
+                    currency: "USD"
+                  }
+                }
+              ]
+            });
+          },
+          onApprove: function(data, actions) {
+            // Capture the funds from the transaction
+            return actions.order.capture().then(function(details) {
+              // Show a success message to your buyer
+              //paypal.checkout.closeFlow();
+              const modal = document.querySelector("#modal-asklogin");
+              M.Modal.getInstance(modal).close();
+              total = total + 20;
+            });
+          }
+        })
+        .render("#paypal-button-container");
     </script>
   </body>
 </html>
