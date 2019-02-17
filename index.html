@@ -123,14 +123,16 @@
       </div>
 
       <!-- ASK LOGIN MODAL -->
-      <div id="modal-asklogin" class="modal">
-        <!--<div class="modal-content">
-          <h4>Log in to give more?</h4>
-          <button class="btn black darken-2 z-depth-0" id="nah">Nah</button>
-          <button class="btn black darken-2 z-depth-0" id="yeah">Login</button>
-        </div>-->
+      <div id="modal-asklogin" class="modal" style="min-width: 320px;">
         <div class="modal-content">
-          <h5>"Log in" for many more fucks and other cool features</h5>
+          <h5>
+            "Log in" to give whatever you want.
+            <i
+              >Suggestions: "positivity", "ass", "oh my god so good" (Be sure to
+              turn up your device volume)</i
+            >
+          </h5>
+          <h5>"I just wanna give more love/fuck" to give more love/fuck.</h5>
           <h5>"Nah" to replay the lame free version</h5>
           <br />
           <div class="center-align">
@@ -141,6 +143,14 @@
             >
               Login
             </button>
+
+            <button
+              class="btn-large black darken-2 z-depth-0"
+              style="margin-top: 2vh; padding-left: 1vw; padding-right: 1vw; min-width: 289px;"
+              id="moreFucks"
+            >
+              I just wanna give more fucks
+            </button>
             <button
               class="btn-large black darken-2 z-depth-0"
               style="margin-top: 2vh;"
@@ -148,30 +158,35 @@
             >
               Nah
             </button>
-            <span id="paypal-button-container"> </span>
-            <!--
-            <form action="/pay" method="post" style="display: inline;">
-              <button
-                class="btn-large black darken-2 z-depth-0"
-                style="margin-top: 2vh;"
-                id="nah"
-                name="moreFucks"
-                value="moreFucks"
-              >
-                I just wanna give more fucks
-              </button>
-            </form>-->
+            <!-- <div
+              id="paypal-button-container"
+              style="width: 10vw; margin-top: 2vh; text-align: center; "
+            ></div>-->
           </div>
+        </div>
+      </div>
+      <!-- ASK LOGIN MODAL -->
+      <div id="modal-fuckPayment" class="modal">
+        <div class="modal-content">
+          <header id="header-fuckPayment">
+            <!--<h5>Wow chill man, I never said it was free.</h5>
+            <h5>
+              Each  is $1. Let's see if you really got that fuck you money.
+            </h5>
+            <h5>Click on paypal button below to give 20 more fucks for $20.</h5>-->
+          </header>
+          <br />
+          <div
+            id="paypal-button-container"
+            style="width: 10vw; margin-top: 2vh; text-align: center; "
+          ></div>
         </div>
       </div>
     </section>
 
     <section id="section2">
       <form>
-        <div
-          class="row"
-          style="position: absolute; left:30%;right:0%;top:30%;bottom:30%;"
-        >
+        <div class="row" style="margin-top:20%;">
           <div class="input-field">
             <input
               id="fieldInput-premium"
@@ -181,6 +196,15 @@
               style="display: none; position: relative; margin-top: 3vw; padding-bottom: 0.2rem; padding-left:0.3rem; padding-top: 4vh; font-size:2vw; width: 35vw;"
             />
             <div class="center-align">
+              <label
+                class="active"
+                for="fieldInput-premium"
+                id="labelInput"
+                style="margin-bottom: 3vw; font-size: 2.5rem; display: block;"
+                >What would you like to give?</label
+              >
+            </div>
+            <div class="center-align" style="margin-top: 2vh;">
               <button
                 class="btn-large black darken-2 z-depth-0"
                 id="fuckButton"
@@ -196,13 +220,6 @@
                 love
               </button>
             </div>
-            <label
-              class="active"
-              for="fieldInput-premium"
-              id="labelInput"
-              style="margin-bottom: 3vw;"
-              >What would you like to give?</label
-            >
           </div>
         </div>
       </form>
@@ -227,7 +244,7 @@
       const auth = firebase.auth();
       const db = firebase.firestore();
     </script>
-    <script type="text/javascript" src="./homeScreen.js"></script>
+
     <script type="text/javascript">
       //global variables
       var text = "";
@@ -236,9 +253,11 @@
     <script type="text/javascript" src="./setPosition.js"></script>
     <script type="text/javascript" src="./addLove.js"></script>
     <script type="text/javascript" src="./takeUserInput.js"></script>
+    <script type="text/javascript" src="./homeScreen.js"></script>
     <script type="text/javascript" src="./restart.js"></script>
+    <script type="text/javascript" src="./fuckPayment.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
     <script>
       $(document).ready(function() {
         $(".scrollspy").scrollSpy();
@@ -249,6 +268,13 @@
     <script>
       paypal
         .Buttons({
+          style: {
+            layout: "vertical",
+            color: "silver",
+            shape: "rect",
+            label: "paypal",
+            height: 25
+          },
           createOrder: function(data, actions) {
             return actions.order.create({
               purchase_units: [
@@ -266,9 +292,13 @@
             return actions.order.capture().then(function(details) {
               // Show a success message to your buyer
               //paypal.checkout.closeFlow();
-              const modal = document.querySelector("#modal-asklogin");
+              const modal = document.querySelector("#modal-fuckPayment");
               M.Modal.getInstance(modal).close();
               total = total + 20;
+              instructChange1 = total * 0.2;
+              instructChange2 = total * 0.4;
+              instructChange3 = total * 0.6;
+              instructChange4 = total * 0.8;
             });
           }
         })

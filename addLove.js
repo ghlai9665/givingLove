@@ -15,10 +15,10 @@ function limit(callback) {
 }
 
 var total = 15;
-var instructChange1 = 15 * 0.2;
-var instructChange2 = 15 * 0.4;
-var instructChange3 = 15 * 0.6;
-var instructChange4 = 15 * 0.8;
+var instructChange1 = total * 0.2;
+var instructChange2 = total * 0.4;
+var instructChange3 = total * 0.6;
+var instructChange4 = total * 0.8;
 
 //handle clicks
 document.getElementById("section3").onclick = function() {
