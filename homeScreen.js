@@ -61,6 +61,11 @@ loginForm.addEventListener("submit", e => {
       M.Modal.getInstance(modal).close();
       loginForm.reset();
       loginForm.querySelector(".error").innerHTML = "";
+      window.scroll({
+        top: 1 * window.innerHeight,
+        left: 0,
+        behavior: "smooth"
+      });
     })
     .catch(err => {
       loginForm.querySelector(".error").innerHTML = err.message;

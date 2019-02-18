@@ -87,7 +87,18 @@ function initLove() {
   initDiv.appendChild(initContent);
   document.getElementById("section3").appendChild(initDiv);
 
-  //window.location.href = '#section2'; //here needs to add animation
+  var initFooter = document.createElement("div");
+  initFooter.className = "footer-copyright grey-text text-darken-3";
+  initFooter.setAttribute(
+    "style",
+    "text-align: center; margin-top: 3vh; font-size: 1vw;"
+  );
+  // initFooter.setAttribute("id", "instruction1");
+  var initFooterContent = document.createTextNode(
+    String.fromCharCode(169) + "2019 Created by High Z"
+  );
+  initFooter.appendChild(initFooterContent);
+  document.getElementById("section3").appendChild(initFooter);
 
   window.scroll({
     top: 2 * window.innerHeight,

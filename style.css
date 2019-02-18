@@ -13,6 +13,21 @@
   color: #212121;
 }
 
+@media (max-width: 650px) {
+  .input-field > #fieldInput-premium {
+    margin-left: 30%;
+  }
+}
+
+#fieldInput-premium {
+  display: none;
+  margin-left: 35%;
+  padding-bottom: 0.2rem;
+  padding-left: 0.3rem;
+  font-size: 2vw;
+  width: 30vw;
+}
+
 #fieldInput-premium:focus {
   color: #212121;
   border-bottom: 1px solid #424242;
