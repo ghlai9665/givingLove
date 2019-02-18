@@ -28,10 +28,11 @@ var instructChange4 = total * 0.8;
 
 //handle clicks
 document.getElementById("section3").onclick = function() {
-  /*var instructChange1 = 5;
-  var instructChange2 = 7;
-  var instructChange3 = 9;
-  var total = 11;*/
+  function moreButton() {
+    document.getElementById("moreFucks").innerHTML = `give 20 more ${text}s`;
+  }
+
+  moreButton();
 
   if (idNumber > instructChange1) {
     document.getElementById("instruction1").innerHTML =

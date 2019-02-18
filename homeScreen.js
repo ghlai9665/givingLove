@@ -62,7 +62,7 @@ loginForm.addEventListener("submit", e => {
       loginForm.reset();
       loginForm.querySelector(".error").innerHTML = "";
       total = 20;
-      document.getElementById("moreFucks").innerHTML = `give 20 more ${text}s`;
+
       window.scroll({
         top: 1 * window.innerHeight,
         left: 0,
@@ -118,6 +118,14 @@ auth.onAuthStateChanged(user => {
 
 const setupUI = user => {
   if (user) {
+    //close login modal
+    const modal = document.querySelector("#modal-login");
+    M.Modal.getInstance(modal).close();
+    window.scroll({
+      top: window.innerHeight,
+      left: 0,
+      behavior: "smooth"
+    });
     document.querySelector("#logout").style.display = "inline";
     document.querySelector("#login").style.display = "none";
     document.querySelector("#guest").style.display = "none";
@@ -125,6 +133,8 @@ const setupUI = user => {
     document.querySelector("#loveButton").style.display = "none";
     document.querySelector("#fuckButton").style.display = "none";
     document.querySelector("#fieldInput-premium").style.display = "block";
+    document.querySelector("#asklogin-instruct").style.display = "none";
+    document.querySelector("#yeah").style.display = "none";
   } else {
     document.querySelector("#login").style.display = "inline";
     document.querySelector("#logout").style.display = "none";
@@ -133,5 +143,7 @@ const setupUI = user => {
     document.querySelector("#fieldInput-premium").style.display = "none";
     document.querySelector("#loveButton").style.display = "inline";
     document.querySelector("#fuckButton").style.display = "inline";
+    document.querySelector("#asklogin-instruct").style.display = "block";
+    document.querySelector("#yeah").style.display = "inline";
   }
 };

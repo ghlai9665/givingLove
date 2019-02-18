@@ -14,7 +14,7 @@
   </head>
   <body>
     <section id="section1">
-      <header class="center-align" style="margin-top: 10%; margin-bottom: 0%;">
+      <header id="welcome" class="center-align" style="margin-top: 10%; margin-bottom: 0%;">
         <h4>Welcome to How Many Fucks Given.</h4>
       </header>
       <div class="center-align" style="margin-top: 10%;">
@@ -97,12 +97,19 @@
               <label for="login-password">Your password</label>
             </div>
             <button class="btn black darken-2 z-depth-0">Login</button>
+            <button
+                class="btn black darken-2 z-depth-0 modal-trigger col s12 l4"
+                data-target="modal-signup">
+                Signup </button>
+             
+  
             <p class="error pink-text center-align"></p>
           </form>
         </div>
       </div>
 
       <!-- LOGIN MODAL 2-->
+      <!--
       <div id="modal-login2" class="modal">
         <div class="modal-content">
           <h4>Login</h4>
@@ -120,19 +127,21 @@
             <p class="error pink-text center-align"></p>
           </form>
         </div>
-      </div>
+      </div>-->
 
       <!-- ASK LOGIN MODAL -->
       <div id="modal-asklogin" class="modal" style="min-width: 320px;">
         <div class="modal-content">
+          <div id="asklogin-instruct">
           <h5>
-            "Log in" to give whatever you want.
+            "Log in" to give something other than "fucks" and "loves".
           </h5>
           <i
             >Suggestions: "positivity", "ass", "oh my god so good" (Be sure to
             turn up your device volume)</i
           >
           <h5>"Nah" to replay the lame free version</h5>
+        </div>
           <br />
           <div class="center-align">
             <button
@@ -157,10 +166,6 @@
             >
               Nah
             </button>
-            <!-- <div
-              id="paypal-button-container"
-              style="width: 10vw; margin-top: 2vh; text-align: center; "
-            ></div>-->
           </div>
         </div>
       </div>
@@ -168,11 +173,6 @@
       <div id="modal-fuckPayment" class="modal">
         <div class="modal-content">
           <div id="header-fuckPayment">
-            <!--<h5>Wow chill man, I never said it was free.</h5>
-            <h5>
-              Each  is $1. Let's see if you really got that fuck you money.
-            </h5>
-            <h5>Click on paypal button below to give 20 more fucks for $20.</h5>-->
           </div>
           <header id="whatU"></header>
           <br />
@@ -200,7 +200,7 @@
                 id="fieldInput-premium"
                 type="text"
                 autocomplete="off"
-                placeholder="e.g. fuck, love, s, energy, fuck..."
+                placeholder="good shit only.."
               />
              </div>
             </div>
