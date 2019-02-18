@@ -148,7 +148,7 @@
               style="margin-top: 2vh; padding-left: 1vw; padding-right: 1vw; min-width: 289px;"
               id="moreFucks"
             >
-              I just wanna give more fucks
+              
             </button>
             <button
               class="btn-large black darken-2 z-depth-0"
@@ -167,13 +167,14 @@
       <!-- ASK LOGIN MODAL -->
       <div id="modal-fuckPayment" class="modal">
         <div class="modal-content">
-          <header id="header-fuckPayment">
+          <div id="header-fuckPayment">
             <!--<h5>Wow chill man, I never said it was free.</h5>
             <h5>
               Each  is $1. Let's see if you really got that fuck you money.
             </h5>
             <h5>Click on paypal button below to give 20 more fucks for $20.</h5>-->
-          </header>
+          </div>
+          <header id="whatU"></header>
           <br />
           <div
             id="paypal-button-container"
@@ -276,7 +277,7 @@
             color: "silver",
             shape: "rect",
             label: "paypal",
-            height: 25
+            height: 45
           },
           createOrder: function(data, actions) {
             return actions.order.create({
@@ -298,10 +299,12 @@
               const modal = document.querySelector("#modal-fuckPayment");
               M.Modal.getInstance(modal).close();
               total = total + 20;
-              instructChange1 = total * 0.2;
-              instructChange2 = total * 0.4;
-              instructChange3 = total * 0.6;
-              instructChange4 = total * 0.8;
+              document.getElementById("instruction1").innerHTML =
+              `<span class="green-text">Ok, baller, you have 20 more ${text}s now</span>`;
+              instructChange1 = idNumber + 1;
+              instructChange2 = idNumber + 4;
+              instructChange3 = idNumber + 12;
+              instructChange4 = idNumber + 18;
             });
           }
         })

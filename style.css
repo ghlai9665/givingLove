@@ -61,6 +61,10 @@ body {
 header {
   animation: blinker 3s linear infinite;
 }
+
+#whatU {
+  animation: blinker 2s linear infinite;
+}
 body {
   /*background-color: #1d1d1d;*/
   /*background-color: #e3f2fd;*/
@@ -78,7 +82,7 @@ section {
 }
 
 .instruction {
-  animation: blinker 3s linear infinite;
+  animation: blinker 0.5s linear infinite;
   color: #e53935;
 }
 

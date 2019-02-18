@@ -61,6 +61,8 @@ loginForm.addEventListener("submit", e => {
       M.Modal.getInstance(modal).close();
       loginForm.reset();
       loginForm.querySelector(".error").innerHTML = "";
+      total = 20;
+      document.getElementById("moreFucks").innerHTML = `give 20 more ${text}s`;
       window.scroll({
         top: 1 * window.innerHeight,
         left: 0,
@@ -116,7 +118,6 @@ auth.onAuthStateChanged(user => {
 
 const setupUI = user => {
   if (user) {
-    total = 15;
     document.querySelector("#logout").style.display = "inline";
     document.querySelector("#login").style.display = "none";
     document.querySelector("#guest").style.display = "none";
@@ -125,7 +126,6 @@ const setupUI = user => {
     document.querySelector("#fuckButton").style.display = "none";
     document.querySelector("#fieldInput-premium").style.display = "block";
   } else {
-    total = 11;
     document.querySelector("#login").style.display = "inline";
     document.querySelector("#logout").style.display = "none";
     document.querySelector("#guest").style.display = "inline";

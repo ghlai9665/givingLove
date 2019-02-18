@@ -9,12 +9,18 @@ function openModal() {
 function limit(callback) {
   var finalMsg = new SpeechSynthesisUtterance();
   finalMsg.text =
-    "Wow, 20" + " " + text + "s were given, that's a lot of " + text + "s!!!";
+    "Wow, " +
+    total +
+    " " +
+    text +
+    "s were given, that's a lot of " +
+    text +
+    "s!!!";
   speechSynthesis.speak(finalMsg);
   callback();
 }
 
-var total = 15;
+var total = 20;
 var instructChange1 = total * 0.2;
 var instructChange2 = total * 0.4;
 var instructChange3 = total * 0.6;
@@ -41,27 +47,14 @@ document.getElementById("section3").onclick = function() {
   }
   if (idNumber > instructChange4) {
     document.getElementById("instruction1").innerHTML =
-      "You are almost out of " + text.toUpperCase() + "s!";
+      "You are almost out of " + text.toUpperCase() + "S!";
   }
-  if (idNumber == total) {
+  if (idNumber >= total) {
     document.getElementById("instruction1").innerHTML =
       "Sorry. You are out of " + text.toUpperCase() + "s.";
   }
 
   if (idNumber > total) {
-    /*var finalMsg = new SpeechSynthesisUtterance();
-    finalMsg.text =
-      "Wow, 20" + " " + text + "s were given, that's a lot of " + text + "s!!!";
-    speechSynthesis.speak(finalMsg);*/
-
-    //alert(
-    //"20" + " " + text + "s were given !!! That's a lot of " + text + "!!!"
-    // );
-    /*
-    return $("#modal-login")
-      .modal("open")
-      .then(() => restart());*/
-    //return openModal().then(console.log("Promise was fulfilled"));
     return limit(openModal);
   }
   return addLove();
@@ -72,7 +65,6 @@ function initLove() {
   idNumber = 1;
   document.getElementById("section3").innerHTML = "";
 
-  //"position: absolute; left: 35vw; top: 90vh"
   //initialize
   var initDiv = document.createElement("div");
   initDiv.className = "instruction";
@@ -114,7 +106,6 @@ function restartLove() {
   idNumber = 1;
   document.getElementById("section3").innerHTML = "";
 
-  //"position: absolute; left: 35vw; top: 90vh"
   //initialize
   var initDiv = document.createElement("div");
   initDiv.className = "instruction";
