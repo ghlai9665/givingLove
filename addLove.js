@@ -1,6 +1,10 @@
 function openModal() {
   //console.log("it tried to open modal");
+
   $("#modal-asklogin").modal("open");
+  document.getElementById("asklogin-fuckStatus").innerHTML = `
+  <h5>Based on the current number of ${text}s you've given, you are a <strong><u>${getFuckStatus()}</u></strong></h5>
+  `;
   //  console.log("it went thru");
   // if log in, allow more fucks
 
