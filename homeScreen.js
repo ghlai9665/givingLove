@@ -78,9 +78,11 @@ loginForm.addEventListener("submit", e => {
 const nah = document.querySelector("#nah");
 
 nah.addEventListener("click", e => {
-  console.log("they tried to run this...");
   e.preventDefault();
-  return restart();
+  var result = confirm(`Are you sure? This will erase all your ${text}s`);
+  if (result) {
+    return restart();
+  }
 });
 
 function modalX() {
