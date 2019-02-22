@@ -26,13 +26,14 @@ signupForm.addEventListener("submit", e => {
   auth
     .createUserWithEmailAndPassword(email, password)
     .then(cred => {
+      verifyUser();
       //store extra info about user
-      return db
+      /*return db
         .collection("users")
         .doc(cred.user.uid)
         .set({
           bio: signupForm["signup-bio"].value
-        });
+        });*/
     })
     .then(() => {
       //close signup modal
@@ -56,21 +57,29 @@ loginForm.addEventListener("submit", e => {
   auth
     .signInWithEmailAndPassword(email, password)
     .then(cred => {
-      console.log("user logged in");
-      const modal = document.querySelector("#modal-login");
-      M.Modal.getInstance(modal).close();
-      loginForm.reset();
-      loginForm.querySelector(".error").innerHTML = "";
-      total = 20;
-
-      window.scroll({
-        top: 1 * window.innerHeight,
-        left: 0,
-        behavior: "smooth"
-      });
+      if (user.emailVerified) {
+        const modal = document.querySelector("#modal-login");
+        M.Modal.getInstance(modal).close();
+        loginForm.reset();
+        loginForm.querySelector(".error").innerHTML = "";
+        total = 20;
+        window.scroll({
+          top: 1 * window.innerHeight,
+          left: 0,
+          behavior: "smooth"
+        });
+      } //else if (!user.emailVerified) {
+      //loginForm.querySelector(".error").innerHTML =
+      // "Your email is not verified. Please verify and try logging in agian.";
+      //}
+      //loginForm.querySelector(".error").innerHTML =
+      //"Verify your email and try again";
+      //}
+      //start the user's fucks
     })
     .catch(err => {
-      loginForm.querySelector(".error").innerHTML = err.message;
+      loginForm.querySelector(".error").innerHTML =
+        "Try verify your email and log in again";
     });
 });
 
@@ -94,7 +103,7 @@ function modalX() {
 const yeah = document.querySelector("#yeah");
 yeah.addEventListener("click", e => {
   e.preventDefault();
-  console.log("they tried to run this...");
+
   return modalX();
 });
 
@@ -111,8 +120,15 @@ logout.addEventListener("click", e => {
 
 auth.onAuthStateChanged(user => {
   if (user) {
-    console.log("user logged in: ", user);
-    setupUI(user);
+    var email_id = user.email;
+    var email_verified = user.emailVerified;
+    console.log(email_id + " is verified: " + email_verified);
+    if (email_verified) {
+      setupUI(user);
+    } else {
+      //alert("user not verified, please verify and try to log in again");
+      setupUI();
+    }
   } else {
     setupUI();
   }
@@ -149,3 +165,19 @@ const setupUI = user => {
     document.querySelector("#yeah").style.display = "inline";
   }
 };
+
+// verify user email
+function verifyUser() {
+  var user = firebase.auth().currentUser;
+
+  user
+    .sendEmailVerification()
+    .then(function() {
+      console.log("email verification was sent");
+      // Email sent.
+    })
+    .catch(function(error) {
+      // An error happened.
+      console.log(error);
+    });
+}
