@@ -289,6 +289,36 @@
           onApprove: function(data, actions) {
             // Capture the funds from the transaction
             return actions.order.capture().then(function(details) {
+              // update their fucks in their db
+              /*
+              db
+        .collection("users")
+        .doc(cred.user.uid).update({
+          fucks: 
+        })*/
+
+          // This part gets the number of fucks in the user
+  db.collection("users").doc(userCred.uid).get().then(function(doc) {
+    if (doc.exists) {
+       var updatedFucks = doc.data().fucks + 20
+        console.log("currentFucks:", updatedFucks);
+        db
+        .collection("users")
+        .doc(userCred.uid).update({
+          fucks: updatedFucks
+        })
+
+
+    } else {
+        console.log("No such document!");
+    }
+}).catch(function(error) {
+    console.log("Error getting fucks:", error);
+});
+
+
+
+
               // Show a success message to your buyer
               //paypal.checkout.closeFlow();
               const modal = document.querySelector("#modal-fuckPayment");

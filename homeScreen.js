@@ -1,3 +1,6 @@
+//global variable, user cred
+var userCred;
+
 //continue as a guest
 document.getElementById("guest").addEventListener("click", e => {
   e.preventDefault();
@@ -26,14 +29,16 @@ signupForm.addEventListener("submit", e => {
   auth
     .createUserWithEmailAndPassword(email, password)
     .then(cred => {
+      userCred = cred;
       verifyUser();
       //store extra info about user
-      /*return db
+      return db
         .collection("users")
         .doc(cred.user.uid)
         .set({
-          bio: signupForm["signup-bio"].value
-        });*/
+          name: signupForm["signup-bio"].value,
+          fucks: 0
+        });
     })
     .then(() => {
       //close signup modal
@@ -119,6 +124,7 @@ logout.addEventListener("click", e => {
 // handle login/logout
 
 auth.onAuthStateChanged(user => {
+  userCred = user;
   if (user) {
     var email_id = user.email;
     var email_verified = user.emailVerified;

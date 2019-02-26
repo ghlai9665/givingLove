@@ -137,6 +137,19 @@ function restartLove() {
 }
 
 function addLove() {
+  /* This part gets the number of fucks in the user
+  db.collection("users").doc(userCred.uid).get().then(function(doc) {
+    if (doc.exists) {
+        console.log("Document data:", doc.data().fucks + 20);
+    } else {
+        console.log("No such document!");
+    }
+}).catch(function(error) {
+    console.log("Error getting fucks:", error);
+});
+*/
+
+
   // create a new div element
   var newDiv = document.createElement("div");
   newDiv.className = "love";
