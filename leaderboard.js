@@ -1,17 +1,5 @@
 var theLeaderBoardHtml;
 
-// Run the leaderboard function
-document
-  .getElementById("section4")
-  .addEventListener("click", e => {
-    e.preventDefault();
-    console.log("running from leaderboard");
-    getLeaderBoard();
-  })
-  .catch(function(error) {
-    console.log("Error getting fucks:", error);
-  });
-
 function getLeaderBoard() {
   db.collection("users")
     .orderBy("fucks", "desc")

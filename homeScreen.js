@@ -1,8 +1,6 @@
 //global variable, user cred
 var userCred;
 
-
-
 //continue as a guest
 document.getElementById("guest").addEventListener("click", e => {
   e.preventDefault();
@@ -39,7 +37,7 @@ signupForm.addEventListener("submit", e => {
         .doc(cred.user.uid)
         .set({
           name: signupForm["signup-bio"].value,
-          fucks: 0
+          fucks: 20
         });
     })
     .then(() => {
