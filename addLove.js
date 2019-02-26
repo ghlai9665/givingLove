@@ -2,9 +2,11 @@ function openModal() {
   //console.log("it tried to open modal");
 
   $("#modal-asklogin").modal("open");
+
   document.getElementById("asklogin-fuckStatus").innerHTML = `
   <h5>Based on the current number of ${text}s you've given, you are a <strong><u>${getFuckStatus()}</u></strong></h5>
-  `;
+  <h5>Here are the greatest fuck givers in the history of mankind:</h5>
+  ${theLeaderBoardHtml}`;
   //  console.log("it went thru");
   // if log in, allow more fucks
 
@@ -32,6 +34,7 @@ var instructChange4 = total * 0.8;
 
 //handle clicks
 document.getElementById("section3").onclick = function() {
+  getLeaderBoard();
   function moreButton() {
     document.getElementById("moreFucks").innerHTML = `give 20 more ${text}s`;
   }
@@ -148,7 +151,6 @@ function addLove() {
     console.log("Error getting fucks:", error);
 });
 */
-
 
   // create a new div element
   var newDiv = document.createElement("div");
