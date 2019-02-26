@@ -1,6 +1,8 @@
 //global variable, user cred
 var userCred;
 
+
+
 //continue as a guest
 document.getElementById("guest").addEventListener("click", e => {
   e.preventDefault();
