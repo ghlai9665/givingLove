@@ -30,11 +30,19 @@ document.getElementById("section4").addEventListener("click", e =>{
     e.preventDefault();
     console.log("running from leaderboard");
     db.collection("users").orderBy("fucks").get().then((snapshot) => {
+     var leaderBoardHtml = "<table><thead><tr><th>Name</th><th>Fucks Given</th></tr></thead><tbody>";
       snapshot.docs.forEach(doc => {
-        console.log(doc.data().name + " fucks: " + doc.data().fucks);
+        //console.log(doc.data().name + " fucks: " + doc.data().fucks);
+        leaderBoardHtml += ("<tr><td>" + doc.data().name + "</td><td>" + doc.data().fucks + "</td></tr>")
       })
+      leaderBoardHtml += "</tbody></table>";
+      document.getElementById("section4").innerHTML = `${leaderBoardHtml}`;
+      console.log(leaderBoardHtml);
+
     }).catch(function(error) {
       console.log("Error getting fucks:", error);
   });
   });
+
+  
   
