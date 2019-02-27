@@ -1,16 +1,12 @@
 function openModal() {
-  //console.log("it tried to open modal");
+  //if user already signed in, display one thing.
 
+  //if user has not signed in, ask for sign in..
   $("#modal-asklogin").modal("open");
-
   document.getElementById("asklogin-fuckStatus").innerHTML = `
   <h5>Based on the current number of ${text}s you've given, you are a <strong><u>${getFuckStatus()}</u></strong></h5>
   <h5>Here are the greatest fuck givers in the history of mankind:</h5>
   ${theLeaderBoardHtml}`;
-  //  console.log("it went thru");
-  // if log in, allow more fucks
-
-  // else, restart()
 }
 function limit(callback) {
   var finalMsg = new SpeechSynthesisUtterance();
@@ -36,7 +32,13 @@ var instructChange4 = total * 0.8;
 document.getElementById("section3").onclick = function() {
   getLeaderBoard();
   function moreButton() {
-    document.getElementById("moreFucks").innerHTML = `give 20 more ${text}s`;
+    if (userCred == null) {
+      document.getElementById(
+        "moreFucks"
+      ).innerHTML = `Sign in to give more than 20 ${text}s`;
+    } else {
+      document.getElementById("moreFucks").innerHTML = `give 20 more ${text}s`;
+    }
   }
 
   moreButton();
@@ -87,6 +89,7 @@ function initLove() {
   initDiv.appendChild(initContent);
   document.getElementById("section3").appendChild(initDiv);
 
+  /*
   var initFooter = document.createElement("div");
   initFooter.className = "footer-copyright grey-text text-darken-3";
   initFooter.setAttribute(
@@ -99,7 +102,7 @@ function initLove() {
   );
   initFooter.appendChild(initFooterContent);
   document.getElementById("section3").appendChild(initFooter);
-
+*/
   window.scroll({
     top: 2 * window.innerHeight,
     left: 0,

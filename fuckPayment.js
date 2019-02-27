@@ -3,10 +3,14 @@
 const moreFucks = document.querySelector("#moreFucks");
 moreFucks.addEventListener("click", e => {
   e.preventDefault();
-  const modal = document.querySelector("#modal-asklogin");
-  M.Modal.getInstance(modal).close();
-  $("#modal-fuckPayment").modal("open");
-  fuckPayment();
+  if (userCred == null) {
+    $("#modal-login").modal("open");
+  } else {
+    const modal = document.querySelector("#modal-asklogin");
+    M.Modal.getInstance(modal).close();
+    $("#modal-fuckPayment").modal("open");
+    fuckPayment();
+  }
 });
 
 function getFuckStatus() {

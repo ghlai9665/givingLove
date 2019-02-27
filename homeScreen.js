@@ -93,7 +93,9 @@ const nah = document.querySelector("#nah");
 
 nah.addEventListener("click", e => {
   e.preventDefault();
-  var result = confirm(`Are you sure? This will erase all your ${text}s`);
+  var result = confirm(
+    `Are you sure? This will erase all your ${text}s from the screen, even though your fucks are saved in the database and are cumulative.`
+  );
   if (result) {
     return restart();
   }
@@ -145,6 +147,7 @@ const setupUI = user => {
     //close login modal
     const modal = document.querySelector("#modal-login");
     M.Modal.getInstance(modal).close();
+    $("#modal-asklogin").modal("close");
     window.scroll({
       top: window.innerHeight,
       left: 0,
@@ -154,21 +157,21 @@ const setupUI = user => {
     document.querySelector("#login").style.display = "none";
     document.querySelector("#guest").style.display = "none";
     document.querySelector("#signup").style.display = "none";
-    document.querySelector("#loveButton").style.display = "none";
-    document.querySelector("#fuckButton").style.display = "none";
-    document.querySelector("#fieldInput-premium").style.display = "block";
+    //document.querySelector("#loveButton").style.display = "none";
+    document.querySelector("#fuckButton").style.display = "inline";
+    // document.querySelector("#fieldInput-premium").style.display = "block";
     document.querySelector("#asklogin-instruct").style.display = "none";
-    document.querySelector("#yeah").style.display = "none";
+    //document.querySelector("#yeah").style.display = "none";
   } else {
     document.querySelector("#login").style.display = "inline";
     document.querySelector("#logout").style.display = "none";
     document.querySelector("#guest").style.display = "inline";
     document.querySelector("#signup").style.display = "inline";
     document.querySelector("#fieldInput-premium").style.display = "none";
-    document.querySelector("#loveButton").style.display = "inline";
+    //document.querySelector("#loveButton").style.display = "inline";
     document.querySelector("#fuckButton").style.display = "inline";
     document.querySelector("#asklogin-instruct").style.display = "block";
-    document.querySelector("#yeah").style.display = "inline";
+    // document.querySelector("#yeah").style.display = "inline";
   }
 };
 

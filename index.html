@@ -100,6 +100,7 @@
                 class="btn black darken-2 z-depth-0 modal-trigger col s12 l4"
                 data-target="modal-signup">
                 Signup </button>
+                <button class="btn black darken-2 z-depth-0" id="googleSignIn">Sign in with Google</button>    
             <p class="error pink-text center-align"></p>
           </form>
         </div>
@@ -317,6 +318,14 @@
                       })
                   } else {
                       console.log("No such document!");
+                      db
+                      .collection("users")
+                      .doc(userCred.uid)
+                      .set({
+                        name: "Google User",
+                        fucks: 40
+                      });
+                      console.log("tried to create firebase user!");
                   }
               }).catch(function(error) {
                   console.log("Error getting fucks:", error);
