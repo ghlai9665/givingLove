@@ -4,6 +4,9 @@
   /*color: black;*/
 }
 
+.modal {
+  height: 95%;
+}
 #labelInput {
   font-size: 2.7vw;
   color: #212121;

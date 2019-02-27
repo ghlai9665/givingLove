@@ -104,13 +104,13 @@ function modalX() {
   M.Modal.getInstance(modal).close();
   $("#modal-login").modal("open");
 }
-
+/*
 const yeah = document.querySelector("#yeah");
 yeah.addEventListener("click", e => {
   e.preventDefault();
 
   return modalX();
-});
+});*/
 
 // log out
 const logout = document.querySelector("#logout");
